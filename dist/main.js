@@ -6,7 +6,7 @@ async function start() {
     const PORT = process.env.PORT || 5000;
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     await app.listen(PORT, () => {
-        console.log('server started');
+        console.log(`server started ${PORT}`);
     });
 }
 start();
