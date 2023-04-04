@@ -11,5 +11,4 @@ import {User} from "./users.model";
         SequelizeModule.forFeature([User])
     ]
 })
-export class UsersModule {
-}
+export class UsersModule {}
