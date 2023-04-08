@@ -3,4 +3,4 @@
 </p>
 
 
-https://www.youtube.com/watch?v=dDeWWQWMM-Y&t=712s 26:30
+https://www.youtube.com/watch?v=dDeWWQWMM-Y&t=712s
