@@ -12,8 +12,11 @@ export class PostsService {
 	) {}
 
 	async createPost(postDto: CreatePostDto, image: any) {
-		console.log(postDto)
 		const fileName = await this.filesService.createFile(image)
 		return await this.postRepository.create({ ...postDto, image: fileName })
+	}
+
+	async getPostByUserId(userId: number) {
+		return await this.postRepository.findOne({ where: { userId } })
 	}
 }
