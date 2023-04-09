@@ -1,7 +1,8 @@
-import { BelongsToMany, Column, DataType, Model, Table } from 'sequelize-typescript'
+import { BelongsToMany, Column, DataType, HasMany, Model, Table } from 'sequelize-typescript'
 import { ApiProperty } from '@nestjs/swagger'
 import { Role } from '../roles/roles.model'
 import { UserRoles } from '../roles/user-roles.model'
+import { Post } from '../posts/posts.model'
 
 interface UserCreationAttrs {
 	email: string
@@ -10,7 +11,7 @@ interface UserCreationAttrs {
 
 @Table({ tableName: 'users' })
 export class User extends Model<User, UserCreationAttrs> {
-	@ApiProperty({ example: '1', description: 'user ID' })
+	@ApiProperty({ example: 1, description: 'user Id' })
 	@Column({
 		type: DataType.INTEGER,
 		unique: true,
@@ -47,4 +48,7 @@ export class User extends Model<User, UserCreationAttrs> {
 
 	@BelongsToMany(() => Role, () => UserRoles)
 	roles: Role[]
+
+	@HasMany(() => Post)
+	posts: Post[]
 }
